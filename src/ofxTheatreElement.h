@@ -108,7 +108,9 @@ public:
 public:
 	void draw(int iWidth, int iHeight, float fScale);
 	void updateImg(ofImage& oNewImg);
+	void getImage(ofImage& refImg);
 
+	void updateSize();
 private:
 	ofxDynamicImageActor*	m_pImageActor;
 

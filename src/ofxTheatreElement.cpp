@@ -299,9 +299,22 @@ void ofxDynamicImageElement::draw(int iWidth, int iHeight, float fScale)
 void ofxDynamicImageElement::updateImg(ofImage& oNewImg)
 {
 	this->m_pImageActor->m_oImage.clone(oNewImg);
-	this->m_stElementBase.iHeight = oNewImg.height;
-	this->m_stElementBase.iWidth = oNewImg.width;
+	this->updateSize();
 }
+
+//--------------------------------------------------------------
+void ofxDynamicImageElement::getImage(ofImage& refImg)
+{
+	refImg = this->m_pImageActor->m_oImage;
+}
+
+//--------------------------------------------------------------
+void ofxDynamicImageElement::updateSize()
+{
+	this->m_stElementBase.iWidth = this->m_pImageActor->m_oImage.width;
+	this->m_stElementBase.iHeight = this->m_pImageActor->m_oImage.height;
+}
+
 #pragma endregion
 
 #pragma region CLASS ofxAnimationImageElement

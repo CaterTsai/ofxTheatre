@@ -94,7 +94,6 @@ public:
 		{
 			oDir_.allowExt("jpg");
 		}
-
 		oDir_.listDir();
 
 		if(oDir_.numFiles() > 0)
@@ -165,11 +164,7 @@ public:
 		this->m_bIsInitialSuccess = true;
 		this->m_ucActorType = eACTOR_WEBCAM_TYPE;
 		//WebCam Setting
-		auto List_ = this->m_oVidGrabber.listDevices();
-		for(auto Iter_ : List_)
-		{
-			cout<<Iter_.deviceName<<endl;
-		}
+
 		this->m_oVidGrabber.setVerbose(true);
 		this->m_oVidGrabber.setDeviceID(ucDeviceID);
 		this->m_oVidGrabber.setDesiredFrameRate(ucFPS);
